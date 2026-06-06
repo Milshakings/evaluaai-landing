@@ -1,0 +1,92 @@
+.section {
+  padding: 100px 0;
+  background: var(--surface);
+}
+
+.box {
+  background: var(--ink);
+  border-radius: var(--radius-xl);
+  padding: clamp(48px, 8vw, 80px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(26, 107, 255, 0.15);
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.desc {
+  font-size: 17px;
+  color: rgba(255,255,255,0.55);
+  max-width: 500px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.form {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 480px;
+  flex-wrap: wrap;
+}
+
+.input {
+  flex: 1;
+  min-width: 220px;
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: #ffffff;
+  font-family: var(--dm);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input::placeholder { color: rgba(255,255,255,0.3); }
+.input:focus { border-color: var(--accent); }
+
+.btn {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-family: var(--dm);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+  background: #0050cc;
+  transform: translateY(-1px);
+}
+
+.note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.3);
+}
