@@ -16,7 +16,7 @@ export default function Footer() {
               Ajustado al Decreto 170 · Sistema PIE · FUDEI
             </p>
             <p className={styles.copy}>
-              © {new Date().getFullYear()} EvalúaAI. Hecho en Chile 🇨🇱
+              © 2025 EvalúaAI. Hecho en Chile 🇨🇱
             </p>
           </div>
         </div>

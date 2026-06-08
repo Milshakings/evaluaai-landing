@@ -1,3 +1,4 @@
+"use client";
 import styles from "./CTA.module.css";
 
 export default function CTA() {
