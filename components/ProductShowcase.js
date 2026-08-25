@@ -17,7 +17,7 @@ export default function ProductShowcase() {
           </p>
         </div>
 
-        {/* Pestañas */}
+        {/* Pestañas de Navegación */}
         <div className={styles.tabs}>
           <button
             type="button"
@@ -35,9 +35,9 @@ export default function ProductShowcase() {
           </button>
         </div>
 
-        {/* Contenido */}
-        <div className={styles.card}>
-          {activeTab === 'trazabilidad' ? (
+        {/* Contenido Pestaña 1 */}
+        {activeTab === 'trazabilidad' && (
+          <div className={styles.card}>
             <div className={styles.grid}>
               <div className={styles.textContent}>
                 <h3 className={styles.cardTitle}>Dashboard de Trazabilidad UTP</h3>
@@ -57,7 +57,12 @@ export default function ProductShowcase() {
                 />
               </div>
             </div>
-          ) : (
+          </div>
+        )}
+
+        {/* Contenido Pestaña 2 */}
+        {activeTab === 'inasistencia' && (
+          <div className={styles.card}>
             <div className={styles.grid}>
               <div className={styles.textContent}>
                 <h3 className={styles.cardTitle}>Alerta Temprana de Inasistencia</h3>
@@ -76,8 +81,8 @@ export default function ProductShowcase() {
                 />
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );
