@@ -1,72 +1,81 @@
 .section {
-  padding: 100px 0;
-  background: var(--ink);
+  padding: 80px 24px;
+  background: rgba(15, 23, 42, 0.3);
+  border-top: 1px solid var(--border);
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 48px;
 }
 
-.eyebrow {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.tag {
   color: var(--accent);
-  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .title {
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(26px, 3.5vw, 40px);
   font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 20px;
+  color: var(--ink);
+  margin-top: 8px;
 }
 
-.desc {
-  font-size: 17px;
-  color: rgba(255,255,255,0.5);
-  max-width: 480px;
-  margin: 0 auto;
+.subtitle {
+  color: var(--ink-muted);
+  font-size: 15px;
+  max-width: 620px;
+  margin: 12px auto 0;
+  line-height: 1.6;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .card {
-  padding: 36px 32px;
-  background: rgba(13, 17, 23, 0.6);
-  transition: background 0.2s;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 32px 24px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
-  background: rgba(26, 107, 255, 0.08);
+  transform: translateY(-2px);
+  border-color: var(--accent);
 }
 
 .icon {
-  font-size: 28px;
-  display: block;
+  font-size: 32px;
   margin-bottom: 16px;
 }
 
 .cardTitle {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 10px;
+  color: var(--ink);
+  margin-bottom: 8px;
 }
 
 .cardDesc {
-  font-size: 14px;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.7;
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.6;
 }
