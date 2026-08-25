@@ -1,63 +1,58 @@
 import React from 'react';
 import styles from "./Hero.module.css";
 
-
 export default function Hero({ onOpenDemo }) {
   return (
-    <section className="hero">
+    <section className={styles.hero}>
       {/* Badge con punto animado */}
-      <div className="badge">
-        <span className="dot"></span>
+      <div className={styles.badge}>
+        <span className={styles.dot}></span>
         <span>Alineado al Decreto 170 &bull; Sistema PIE Chile</span>
       </div>
 
       {/* Titular */}
-      <h1 className="headline">
+      <h1 className={styles.headline}>
         Trazabilidad PIE al día y{' '}
-        <span className="highlight">carpetas de evaluación listas en minutos</span>
+        <span className={styles.highlight}>carpetas de evaluación listas en minutos</span>
       </h1>
 
       {/* Subtítulo */}
-      <p className="sub">
+      <p className={styles.sub}>
         Plataforma especializada que automatiza la redacción de borradores técnicos, 
         elimina la duplicación de datos para FUDEI y protege a tu colegio en auditorías.
       </p>
 
       {/* Acciones / Botones */}
-      <div className="actions">
-        <button onClick={onOpenDemo} className="primary">
+      <div className={styles.actions}>
+        <button onClick={onOpenDemo} className={styles.primary}>
           Solicitar Demo Institucional
         </button>
-        <a href="#ver-demo" className="secondary">
+        <a href="#ver-demo" className={styles.secondary}>
           Ver cómo funciona &rarr;
         </a>
       </div>
 
       {/* Métricas / Estadísticas */}
-      <div className="stats">
-        <div className="stat">
-          <span className="num">80%</span>
-          <span className="label">Menos tiempo en papeleo administrativo</span>
+      <div className={styles.stats}>
+        <div className={styles.stat}>
+          <span className={styles.num}>80%</span>
+          <span className={styles.label}>Menos tiempo en papeleo administrativo</span>
         </div>
 
-        <div className="divider"></div>
+        <div className={styles.divider}></div>
 
-        <div className="stat">
-          <span className="num">100%</span>
-          <span className="label">Trazabilidad de expedientes para la Dirección</span>
+        <div className={styles.stat}>
+          <span className={styles.num}>100%</span>
+          <span className={styles.label}>Trazabilidad de expedientes para la Dirección</span>
         </div>
 
-        <div className="divider"></div>
+        <div className={styles.divider}></div>
 
-        <div className="stat">
-          <span className="num">1 Clic</span>
-          <span className="label">Formato listo para traspasar a FUDEI</span>
+        <div className={styles.stat}>
+          <span className={styles.num}>1 Clic</span>
+          <span className={styles.label}>Formato listo para traspasar a FUDEI</span>
         </div>
       </div>
     </section>
   );
 }
-
-       
-
-       
