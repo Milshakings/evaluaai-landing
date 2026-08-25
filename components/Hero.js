@@ -1,7 +1,7 @@
 import styles from "./Hero.module.css";
 import React from 'react';
 
-export default function HeroSection() {
+export default function Hero({ onOpenDemo }) {
   return (
     <section className="bg-slate-900 text-white py-20 px-4">
       <div className="max-w-6xl mx-auto text-center">
@@ -24,17 +24,17 @@ export default function HeroSection() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <a
-            href="#demo"
+          <button
+            onClick={onOpenDemo}
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-200"
           >
             Solicitar Demo Institucional
-          </a>
+          </button>
           <a
             href="#ver-demo"
             className="border border-slate-700 hover:bg-slate-800 text-slate-300 font-semibold py-3 px-8 rounded-lg transition duration-200"
           >
-            Ver cómo funciona (2 min) &rarr;
+            Ver cómo funciona &rarr;
           </a>
         </div>
 
@@ -57,3 +57,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
+       
