@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState } from 'react';
 import styles from './ProductShowcase.module.css';
 
@@ -16,15 +17,17 @@ export default function ProductShowcase() {
           </p>
         </div>
 
-        {/* Pestañas de Navegación */}
+        {/* Pestañas */}
         <div className={styles.tabs}>
           <button
+            type="button"
             onClick={() => setActiveTab('trazabilidad')}
             className={`${styles.tabButton} ${activeTab === 'trazabilidad' ? styles.activeTab : ''}`}
           >
             Dashboard UTP & Auditoría
           </button>
           <button
+            type="button"
             onClick={() => setActiveTab('inasistencia')}
             className={`${styles.tabButton} ${activeTab === 'inasistencia' ? styles.activeTab : ''}`}
           >
@@ -32,9 +35,9 @@ export default function ProductShowcase() {
           </button>
         </div>
 
-        {/* Panel con Imagen Reales */}
+        {/* Contenido */}
         <div className={styles.card}>
-          {activeTab === 'trazabilidad' && (
+          {activeTab === 'trazabilidad' ? (
             <div className={styles.grid}>
               <div className={styles.textContent}>
                 <h3 className={styles.cardTitle}>Dashboard de Trazabilidad UTP</h3>
@@ -49,14 +52,12 @@ export default function ProductShowcase() {
               <div className={styles.imageContainer}>
                 <img 
                   src="/dashboard-utp.png" 
-                  alt="Dashboard de Trazabilidad UTP EvalúaAI" 
+                  alt="Dashboard UTP" 
                   className={styles.screenshot}
                 />
               </div>
             </div>
-          )}
-
-          {activeTab === 'inasistencia' && (
+          ) : (
             <div className={styles.grid}>
               <div className={styles.textContent}>
                 <h3 className={styles.cardTitle}>Alerta Temprana de Inasistencia</h3>
@@ -70,7 +71,7 @@ export default function ProductShowcase() {
               <div className={styles.imageContainer}>
                 <img 
                   src="/alerta-inasistencia.png" 
-                  alt="Alerta Temprana de Inasistencia NEE" 
+                  alt="Alerta Inasistencia" 
                   className={styles.screenshot}
                 />
               </div>
