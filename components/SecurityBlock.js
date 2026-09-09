@@ -1,41 +1,28 @@
-import React from 'react';
 import styles from './SecurityBlock.module.css';
 
 export default function SecurityBlock() {
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <span className={styles.tag}>Cumplimiento Legal & Ciberseguridad</span>
-          <h2 className={styles.title}>Protección Estricta de Datos Sensibles</h2>
+    <section id="seguridad" className={styles.section}>
+      <h2 className={styles.title}>Tus datos educativos requieren un tratamiento riguroso</h2>
+      <div className={styles.grid}>
+        <div className={styles.card}>
+          <h3>PRIVACIDAD</h3>
+          <p>Los datos de los estudiantes se procesan bajo protocolos estrictos de confidencialidad y aislamiento documental.</p>
         </div>
-
-        <div className={styles.grid}>
-          <div className={styles.box}>
-            <div className={styles.icon}>🔒</div>
-            <h3 className={styles.boxTitle}>Ley 19.628 (Chile)</h3>
-            <p className={styles.boxDesc}>
-              Tratamiento de datos personales estructurado según la normativa chilena sobre protección de la vida privada de los estudiantes.
-            </p>
-          </div>
-
-          <div className={styles.box}>
-            <div className={styles.icon}>🛡️</div>
-            <h3 className={styles.boxTitle}>Modelos Privados de IA</h3>
-            <p className={styles.boxDesc}>
-              Los expedientes e informes procesados jamás se utilizan para entrenar modelos públicos ni se comparten con terceros.
-            </p>
-          </div>
-
-          <div className={styles.box}>
-            <div className={styles.icon}>🔑</div>
-            <h3 className={styles.boxTitle}>Aislamiento por Establecimiento</h3>
-            <p className={styles.boxDesc}>
-              Base de datos privada con encriptación. Cada colegio o sostenedor mantiene el control exclusivo de sus expedientes.
-            </p>
-          </div>
+        <div className={styles.card}>
+          <h3>AISLAMIENTO</h3>
+          <p>Cada establecimiento o sostenedor mantiene sus bases de información totalmente separadas e inaccesibles para terceros.</p>
+        </div>
+        <div className={styles.card}>
+          <h3>CONTROL HUMANO</h3>
+          <p>La plataforma genera borradores. La responsabilidad técnica, validación y decisión final es siempre del profesional educativo.</p>
+        </div>
+        <div className={styles.card}>
+          <h3>IA RESPONSABLE</h3>
+          <p>Modelos optimizados exclusivamente para estructuración administrativa y soporte documental, no para tomar decisiones diagnósticas.</p>
         </div>
       </div>
     </section>
   );
 }
+
