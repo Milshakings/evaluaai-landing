@@ -20,8 +20,3 @@ export default function Home() {
     </main>
   );
 }
-      <h1>EvaluaAI</h1>
-      {/* Tu contenido usando data */}
-    </main>
-  );
-}
