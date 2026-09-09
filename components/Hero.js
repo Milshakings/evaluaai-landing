@@ -1,58 +1,25 @@
-import React from 'react';
-import styles from "./Hero.module.css";
+import styles from './Hero.module.css';
 
-export default function Hero({ onOpenDemo }) {
+export default function Hero() {
   return (
     <section className={styles.hero}>
-      {/* Badge con punto animado */}
-      <div className={styles.badge}>
-        <span className={styles.dot}></span>
-        <span>Alineado al Decreto 170 &bull; Sistema PIE Chile</span>
-      </div>
-
-      {/* Titular */}
-      <h1 className={styles.headline}>
-        Trazabilidad PIE al día y{' '}
-        <span className={styles.highlight}>carpetas de evaluación listas en minutos</span>
+      <div className={styles.badge}>Pensado para equipos PIE, UTP y sostenedores</div>
+      <h1 className={styles.title}>
+        Automatiza la documentación <br />
+        <span className={styles.highlight}>de tu equipo PIE</span>
       </h1>
-
-      {/* Subtítulo */}
-      <p className={styles.sub}>
-        Plataforma especializada que automatiza la redacción de borradores técnicos, 
-        elimina la duplicación de datos para FUDEI y protege a tu colegio en auditorías.
+      <p className={styles.subtitle}>
+        EvalúaAI ayuda a colegios y sostenedores a transformar evaluaciones e información técnica en borradores estructurados, centralizar expedientes y reducir el trabajo administrativo repetitivo.
       </p>
-
-      {/* Acciones / Botones */}
-      <div className={styles.actions}>
-        <button onClick={onOpenDemo} className={styles.primary}>
-          Solicitar Demo Institucional
-        </button>
-        <a href="#ver-demo" className={styles.secondary}>
-          Ver cómo funciona &rarr;
-        </a>
+      <div className={styles.ctaGroup}>
+        <a href="#demo" className={styles.btnPrimary}>Solicitar una demostración (20 min)</a>
+        <a href="#como-funciona" className={styles.btnSecondary}>Ver cómo funciona</a>
       </div>
-
-      {/* Métricas / Estadísticas */}
-      <div className={styles.stats}>
-        <div className={styles.stat}>
-          <span className={styles.num}>80%</span>
-          <span className={styles.label}>Menos tiempo en papeleo administrativo</span>
-        </div>
-
-        <div className={styles.divider}></div>
-
-        <div className={styles.stat}>
-          <span className={styles.num}>100%</span>
-          <span className={styles.label}>Trazabilidad de expedientes para la Dirección</span>
-        </div>
-
-        <div className={styles.divider}></div>
-
-        <div className={styles.stat}>
-          <span className={styles.num}>1 Clic</span>
-          <span className={styles.label}>Formato listo para traspasar a FUDEI</span>
-        </div>
-      </div>
+      <p className={styles.disclaimer}>
+        *La inteligencia artificial actúa como asistente. La revisión y decisión técnica siempre permanece en el profesional.
+      </p>
     </section>
   );
 }
+
+
