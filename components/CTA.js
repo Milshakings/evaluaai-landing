@@ -1,36 +1,91 @@
 "use client";
-import styles from "./CTA.module.css";
+import { useState } from 'react';
+import styles from './CTA.module.css';
 
 export default function CTA() {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    cargo: '',
+    organizacion: '',
+    tipoOrganizacion: 'Colegio',
+    email: '',
+    whatsapp: ''
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Preparado para conexión a eventos de analítica: demo_request
+    console.log('demo_request', formData);
+    alert('Gracias por tu interés. Nos pondremos en contacto para coordinar la demo de 20 minutos.');
+  };
+
   return (
-    <section id="cta" className={styles.section}>
-      <div className="container">
-        <div className={styles.box}>
-          <span className={styles.eyebrow}>Early Access</span>
-          <h2 className={styles.title}>
-            ¿Tu colegio tiene un<br />equipo PIE agotado?
-          </h2>
-          <p className={styles.desc}>
-            Estamos en fase piloto con establecimientos seleccionados.
-            Solicita una demo gratuita y sé parte de la transformación
-            de la educación inclusiva en Chile.
-          </p>
-          <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              placeholder="tu@colegio.cl"
-              className={styles.input}
-              required
+    <section id="demo" className={styles.section}>
+      <div className={styles.container}>
+        <h2>¿Cuánto tiempo está perdiendo hoy tu equipo PIE en tareas administrativas?</h2>
+        <p>Agenda una demostración de 20 minutos y revisemos cómo EvalúaAI puede incorporarse a tu establecimiento.</p>
+        
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.fieldGroup}>
+            <input 
+              type="text" 
+              placeholder="Nombre completo" 
+              required 
+              value={formData.nombre}
+              onChange={(e) => setFormData({...formData, nombre: e.target.value})}
             />
-            <button type="submit" className={styles.btn}>
-              Solicitar Demo Gratuito
-            </button>
-          </form>
-          <p className={styles.note}>
-            Sin costo. Sin compromiso. Respuesta en menos de 24 horas.
-          </p>
-        </div>
+            <input 
+              type="text" 
+              placeholder="Cargo (Ej: Coordinador PIE, Director, UTP)" 
+              required 
+              value={formData.cargo}
+              onChange={(e) => setFormData({...formData, cargo: e.target.value})}
+            />
+          </div>
+
+          <div className={styles.fieldGroup}>
+            <input 
+              type="text" 
+              placeholder="Nombre de la institución / empresa" 
+              required 
+              value={formData.organizacion}
+              onChange={(e) => setFormData({...formData, organizacion: e.target.value})}
+            />
+            <select 
+              value={formData.tipoOrganizacion}
+              onChange={(e) => setFormData({...formData, tipoOrganizacion: e.target.value})}
+            >
+              <option value="Colegio">Colegio</option>
+              <option value="Sostenedor">Sostenedor / Red de colegios</option>
+              <option value="SLEP">SLEP</option>
+              <option value="DAEM/DEM">DAEM / DEM</option>
+              <option value="Proveedor EdTech">Proveedor EdTech (Interés API)</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div className={styles.fieldGroup}>
+            <input 
+              type="email" 
+              placeholder="Correo institucional" 
+              required 
+              value={formData.email}
+              onChange={(e) => setFormData({...formData, email: e.target.value})}
+            />
+            <input 
+              type="tel" 
+              placeholder="Teléfono / WhatsApp" 
+              required 
+              value={formData.whatsapp}
+              onChange={(e) => setFormData({...formData, whatsapp: e.target.value})}
+            />
+          </div>
+
+          <button type="submit" className={styles.btnSubmit}>Quiero ver EvalúaAI funcionando</button>
+        </form>
       </div>
     </section>
   );
 }
+
+
