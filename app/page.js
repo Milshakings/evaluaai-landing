@@ -1,33 +1,19 @@
-'use client';
-
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import Problem from '../components/Problem';
+import Audiences from '../components/Audiences';
 import Comparison from '../components/Comparison';
-import HowItWorks from '../components/HowItWorks';
-import SecurityBlock from '../components/SecurityBlock';
-import ForWhom from '../components/ForWhom';
-import ApiSection from '../components/ApiSection';
-import Objections from '../components/Objections';
-import CTA from '../components/CTA';
+import LeadForm from '../components/LeadForm';
 import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ backgroundColor: '#0b0f17', minHeight: '100vh', color: '#ffffff' }}>
       <Navbar />
       <Hero />
-      <Problem />
+      <Audiences />
       <Comparison />
-      <HowItWorks />
-      <SecurityBlock />
-      <ForWhom />
-      <ApiSection />
-      <Objections />
-      <CTA />
+      <LeadForm />
       <Footer />
     </main>
   );
 }
-
-
