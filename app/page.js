@@ -1,3 +1,8 @@
+// app/page.js
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Audiences from '../components/Audiences';
