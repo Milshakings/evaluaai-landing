@@ -3,7 +3,7 @@ import styles from './Hero.module.css';
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.badge}>Pensado para equipos PIE, UTP y sostenedores</div>
+      <span className={styles.badge}>Pensado para equipos PIE, UTP y sostenedores</span>
       <h1 className={styles.title}>
         Automatiza la documentación <br />
         <span className={styles.highlight}>de tu equipo PIE</span>
@@ -21,5 +21,3 @@ export default function Hero() {
     </section>
   );
 }
-
-
