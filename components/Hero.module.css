@@ -11,7 +11,7 @@
 .badge {
   display: inline-block;
   background-color: rgba(0, 229, 255, 0.1);
-  color: var(--brand-cyan);
+  color: #00e5ff;
   border: 1px solid rgba(0, 229, 255, 0.3);
   padding: 6px 16px;
   border-radius: 20px;
@@ -22,20 +22,20 @@
 
 .title {
   font-size: 3rem;
-  line-height: 1.15;
+  line-height: 1.2;
   font-weight: 800;
-  color: var(--text-main);
+  color: #ffffff;
   margin-bottom: 20px;
   letter-spacing: -0.02em;
 }
 
 .highlight {
-  color: var(--brand-cyan);
+  color: #00e5ff;
 }
 
 .subtitle {
   font-size: 1.15rem;
-  color: var(--text-muted);
+  color: #94a3b8;
   max-width: 720px;
   margin-bottom: 36px;
   line-height: 1.6;
@@ -48,43 +48,45 @@
 }
 
 .btnPrimary {
-  background-color: var(--brand-cyan);
-  color: var(--bg-dark);
+  background-color: #00e5ff;
+  color: #0b0f17;
   padding: 14px 28px;
   border-radius: 8px;
   font-weight: 700;
   font-size: 1rem;
-  transition: background-color 0.2s ease;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .btnPrimary:hover {
-  background-color: var(--brand-cyan-hover);
+  background-color: #00b8cc;
+  transform: translateY(-2px);
 }
 
 .btnSecondary {
   background-color: transparent;
-  color: var(--text-main);
-  border: 1px solid var(--border-color);
+  color: #ffffff;
+  border: 1px solid #1e293b;
   padding: 14px 28px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 1rem;
-  transition: border-color 0.2s ease;
+  text-decoration: none;
+  transition: border-color 0.2s;
 }
 
 .btnSecondary:hover {
-  border-color: var(--brand-cyan);
+  border-color: #00e5ff;
 }
 
 .disclaimer {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  opacity: 0.7;
+  font-size: 0.85rem;
+  color: #64748b;
 }
 
 @media (max-width: 768px) {
   .title {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
   .ctaGroup {
     flex-direction: column;
