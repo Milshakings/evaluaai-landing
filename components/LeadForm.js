@@ -1,5 +1,3 @@
-'use client';
-
 export default function LeadForm() {
   return (
     <section id="demo" style={{ padding: '80px 20px', maxWidth: '900px', margin: '0 auto' }}>
