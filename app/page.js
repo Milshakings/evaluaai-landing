@@ -1,29 +1,33 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import ProcurementBadge from "../components/ProcurementBadge";
-import ProductShowcase from "../components/ProductShowcase";
-import SecurityBlock from "../components/SecurityBlock";
-import Problem from "../components/Problem";
-import HowItWorks from "../components/HowItWorks";
-import ForWhom from "../components/ForWhom";
-import CTA from "../components/CTA";
-import Footer from "../components/Footer";
+'use client';
+
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Problem from '../components/Problem';
+import Comparison from '../components/Comparison';
+import HowItWorks from '../components/HowItWorks';
+import SecurityBlock from '../components/SecurityBlock';
+import ForWhom from '../components/ForWhom';
+import ApiSection from '../components/ApiSection';
+import Objections from '../components/Objections';
+import CTA from '../components/CTA';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Navbar />
-      <main>
-        <Hero />
-        <ProcurementBadge />
-        <ProductShowcase />
-        <SecurityBlock />
-        <Problem />
-        <HowItWorks />
-        <ForWhom />
-        <CTA />
-      </main>
+      <Hero />
+      <Problem />
+      <Comparison />
+      <HowItWorks />
+      <SecurityBlock />
+      <ForWhom />
+      <ApiSection />
+      <Objections />
+      <CTA />
       <Footer />
-    </>
+    </main>
   );
 }
+
+
