@@ -1,68 +1,74 @@
-.nav {
+.navbar {
+  width: 100%;
+  background-color: var(--bg-dark);
+  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(247, 245, 240, 0.88);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
 }
 
-.inner {
-  max-width: var(--max-w);
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
-  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
-  font-family: var(--syne);
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--ink);
-  letter-spacing: -0.03em;
-}
-
-.logo span {
-  color: var(--accent);
-}
-
-.links {
-  list-style: none;
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 10px;
+  text-decoration: none;
 }
 
-.links a {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--ink-muted);
-  transition: color 0.2s;
+.logoImg {
+  border-radius: 6px;
+  object-fit: contain;
 }
 
-.links a:hover {
-  color: var(--ink);
+.logoText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
 }
 
-.btn {
-  background: var(--ink) !important;
-  color: var(--surface) !important;
-  padding: 10px 20px !important;
-  border-radius: var(--radius-sm) !important;
-  font-weight: 500 !important;
-  font-size: 14px !important;
-  transition: background 0.2s !important;
+.cyan {
+  color: var(--brand-cyan);
 }
 
-.btn:hover {
-  background: var(--accent) !important;
+.navLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.navLinks a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.navLinks a:hover {
+  color: var(--brand-cyan);
+}
+
+.btnPrimary {
+  background-color: var(--brand-cyan);
+  color: var(--bg-dark);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.btnPrimary:hover {
+  background-color: var(--brand-cyan-hover);
 }
 
 @media (max-width: 768px) {
-  .links li:not(:last-child) {
+  .navLinks {
     display: none;
   }
 }
