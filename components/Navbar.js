@@ -1,28 +1,43 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import styles from './Navbar.module.css';
 
 export default function Navbar() {
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
-          <Image src="/logo.jpg" alt="EvalúaAI" width={32} height={32} className={styles.logoImg} />
-          <span className={styles.logoText}>Evalúa<span>AI</span></span>
+    <nav style={{
+      width: '100%',
+      backgroundColor: '#0b0f17',
+      borderBottom: '1px solid #1e293b',
+      position: 'sticky',
+      top: 0,
+      zIndex: 100,
+      padding: '16px 20px'
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
+        <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ fontSize: '1.25rem', fontWeight: '800', color: '#ffffff' }}>
+            Evalúa<span style={{ color: '#00e5ff' }}>AI</span>
+          </span>
         </Link>
-        <div className={styles.navLinks}>
-          <a href="#como-funciona">Cómo funciona</a>
-          <a href="#para-quien">Para quién</a>
-          <a href="#seguridad">Seguridad</a>
-          <a href="#api">API</a>
-        </div>
-        <div className={styles.navCta}>
-          <a href="#demo" className={styles.btnPrimary}>Solicitar demo</a>
+
+        <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+          <a href="#demo" style={{
+            backgroundColor: '#00e5ff',
+            color: '#0b0f17',
+            padding: '8px 16px',
+            borderRadius: '6px',
+            fontWeight: '700',
+            fontSize: '0.9rem',
+            textDecoration: 'none'
+          }}>
+            Solicitar demo
+          </a>
         </div>
       </div>
     </nav>
   );
 }
-
-
-
