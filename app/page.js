@@ -11,7 +11,6 @@ import ProcurementBadge from '../components/ProcurementBadge';
 import Objections from '../components/Objections';
 import ApiSection from '../components/ApiSection';
 import CTA from '../components/CTA';
-import LeadForm from '../components/LeadForm';
 import Footer from '../components/Footer';
 
 export default function Home() {
