@@ -62,10 +62,7 @@ export default function Home() {
       {/* 12. Llamado a la acción */}
       <CTA />
 
-      {/* 13. Formulario de contacto / demo */}
-      <LeadForm />
-
-      {/* 14. Pie de página */}
+      {/* 13. Pie de página */}
       <Footer />
     </main>
   );
