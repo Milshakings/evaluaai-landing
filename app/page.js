@@ -1,8 +1,3 @@
-export const dynamic = 'force-dynamic';
-export const dynamicParams = true;
-export const revalidate = 0;
-export const fetchCache = 'force-no-store';
-
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Audiences from '../components/Audiences';
@@ -12,7 +7,13 @@ import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <main style={{ backgroundColor: '#0b0f17', minHeight: '100vh', color: '#ffffff' }}>
+    <main
+      style={{
+        backgroundColor: '#0b0f17',
+        minHeight: '100vh',
+        color: '#ffffff',
+      }}
+    >
       <Navbar />
       <Hero />
       <Audiences />
@@ -22,3 +23,7 @@ export default function Home() {
     </main>
   );
 }
+
+
+
+
