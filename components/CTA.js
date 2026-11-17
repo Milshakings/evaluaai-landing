@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styles from './CTA.module.css';
 
 export default function CTA() {
+  const [requestType, setRequestType] = useState('demo'); // 'demo' | 'ficha'
   const [formData, setFormData] = useState({
     nombre: '',
     cargo: '',
@@ -15,7 +16,6 @@ export default function CTA() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -24,57 +24,77 @@ export default function CTA() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('lead_request', { requestType, ...formData });
 
-    console.log('demo_request', formData);
-
-    alert(
-      'Gracias por tu interés. Nos pondremos en contacto para coordinar la demo de 20 minutos.'
-    );
+    if (requestType === 'ficha') {
+      alert(
+        'Solicitud recibida. Enviaremos a tu correo institucional la Ficha Técnica, especificaciones Ley 21.719 y datos de proveedor Mercado Público.'
+      );
+    } else {
+      alert(
+        'Gracias por tu interés. Nos pondremos en contacto para coordinar la demostración técnica de 20 minutos.'
+      );
+    }
   };
 
   return (
     <section id="demo" className={styles.section}>
-      <div className={styles.backgroundGlow} />
-
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.eyebrow}>
-            SOLICITA UNA DEMOSTRACIÓN
-          </span>
-
+          <span className={styles.eyebrow}>SIGUIENTE PASO INSTITUCIONAL</span>
           <h2 className={styles.title}>
-            ¿Cuánto tiempo está perdiendo hoy tu equipo PIE en tareas
-            administrativas?
+            Lleva el orden normativo y pedagógico a tu equipo PIE
           </h2>
-
           <p className={styles.description}>
-            Agenda una demostración de 20 minutos y descubre cómo EvalúaAI
-            puede reducir la carga administrativa de tu equipo y devolver
-            tiempo de calidad al trabajo con los estudiantes.
+            Selecciona si deseas agendar una demostración práctica con tu equipo o recibir directamente la documentación técnica para evaluación de compra.
           </p>
         </div>
 
         <div className={styles.card}>
           <div className={styles.cardHeader}>
             <div>
-              <h3>Conversemos sobre tu establecimiento</h3>
+              <h3>
+                {requestType === 'demo'
+                  ? 'Agendar Demostración Técnica (20 min)'
+                  : 'Solicitar Ficha Técnica & Kit Mercado Público'}
+              </h3>
               <p>
-                Completa tus datos y coordinaremos una demostración personalizada.
+                {requestType === 'demo'
+                  ? 'Ideal para Directores, Jefes UTP y Coordinadores PIE.'
+                  : 'Ideal para Sostenedores, Encargados de Compras SLEP/DAEM y Administración.'}
               </p>
             </div>
 
-            <div className={styles.badge}>
-              Demo · 20 min
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              <button
+                type="button"
+                onClick={() => setRequestType('demo')}
+                className={styles.badge}
+                style={{
+                  backgroundColor: requestType === 'demo' ? 'var(--brand-cyan)' : 'transparent',
+                  color: requestType === 'demo' ? 'var(--btn-text-on-brand)' : 'var(--brand-cyan)',
+                }}
+              >
+                1. Agendar Demo
+              </button>
+              <button
+                type="button"
+                onClick={() => setRequestType('ficha')}
+                className={styles.badge}
+                style={{
+                  backgroundColor: requestType === 'ficha' ? 'var(--brand-cyan)' : 'transparent',
+                  color: requestType === 'ficha' ? 'var(--btn-text-on-brand)' : 'var(--brand-cyan)',
+                }}
+              >
+                2. Pedir Kit Compras / PDF
+              </button>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.fieldGroup}>
               <div className={styles.field}>
-                <label htmlFor="nombre">
-                  Nombre completo
-                </label>
-
+                <label htmlFor="nombre">Nombre completo</label>
                 <input
                   id="nombre"
                   name="nombre"
@@ -87,15 +107,12 @@ export default function CTA() {
               </div>
 
               <div className={styles.field}>
-                <label htmlFor="cargo">
-                  Cargo
-                </label>
-
+                <label htmlFor="cargo">Cargo</label>
                 <input
                   id="cargo"
                   name="cargo"
                   type="text"
-                  placeholder="Ej. Coordinador/a PIE"
+                  placeholder="Ej. Director/a, Jefe UTP o Coordinador/a PIE"
                   value={formData.cargo}
                   onChange={handleChange}
                   required
@@ -105,15 +122,12 @@ export default function CTA() {
 
             <div className={styles.fieldGroup}>
               <div className={styles.field}>
-                <label htmlFor="organizacion">
-                  Institución
-                </label>
-
+                <label htmlFor="organizacion">Establecimiento / SLEP / Sostenedor</label>
                 <input
                   id="organizacion"
                   name="organizacion"
                   type="text"
-                  placeholder="Ej. Colegio San Agustín"
+                  placeholder="Ej. Colegio San Agustín / SLEP Santa Rosa"
                   value={formData.organizacion}
                   onChange={handleChange}
                   required
@@ -121,54 +135,30 @@ export default function CTA() {
               </div>
 
               <div className={styles.field}>
-                <label htmlFor="tipoOrganizacion">
-                  Tipo de organización
-                </label>
-
+                <label htmlFor="tipoOrganizacion">Tipo de institución</label>
                 <select
                   id="tipoOrganizacion"
                   name="tipoOrganizacion"
                   value={formData.tipoOrganizacion}
                   onChange={handleChange}
                 >
-                  <option value="Colegio">
-                    Colegio
-                  </option>
-
-                  <option value="Sostenedor">
-                    Sostenedor / Red de colegios
-                  </option>
-
-                  <option value="SLEP">
-                    SLEP
-                  </option>
-
-                  <option value="DAEM/DEM">
-                    DAEM / DEM
-                  </option>
-
-                  <option value="Proveedor EdTech">
-                    Proveedor EdTech
-                  </option>
-
-                  <option value="Otro">
-                    Otro
-                  </option>
+                  <option value="Colegio Particular Subvencionado">Colegio Particular Subvencionado</option>
+                  <option value="Sostenedor / Red">Sostenedor / Red de colegios</option>
+                  <option value="SLEP">SLEP</option>
+                  <option value="DAEM/DEM">DAEM / DEM</option>
+                  <option value="Colegio Particular Pagado">Colegio Particular Pagado</option>
                 </select>
               </div>
             </div>
 
             <div className={styles.fieldGroup}>
               <div className={styles.field}>
-                <label htmlFor="email">
-                  Correo institucional
-                </label>
-
+                <label htmlFor="email">Correo institucional</label>
                 <input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="nombre@colegio.cl"
+                  placeholder="nombre@institucion.cl"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -176,10 +166,7 @@ export default function CTA() {
               </div>
 
               <div className={styles.field}>
-                <label htmlFor="whatsapp">
-                  Teléfono / WhatsApp
-                </label>
-
+                <label htmlFor="whatsapp">Teléfono / WhatsApp</label>
                 <input
                   id="whatsapp"
                   name="whatsapp"
@@ -192,29 +179,22 @@ export default function CTA() {
               </div>
             </div>
 
-            <button
-              type="submit"
-              className={styles.btnSubmit}
-            >
-              <span>Quiero ver EvalúaAI funcionando</span>
+            <button type="submit" className={styles.btnSubmit}>
+              <span>
+                {requestType === 'demo'
+                  ? 'Confirmar solicitud de Demo (20 min)'
+                  : 'Recibir Ficha Técnica y Antecedentes Mercado Público'}
+              </span>
               <span className={styles.arrow}>→</span>
             </button>
 
             <div className={styles.formFooter}>
               <span className={styles.check}>✓</span>
               <span>
-                Sin compromiso · Demo personalizada · 20 minutos
+                Sin compromiso · Cumplimiento Ley 21.719 · Respaldo glosas PIE / SEP
               </span>
             </div>
           </form>
-        </div>
-
-        <div className={styles.trust}>
-          <span>Diseñado para equipos PIE en Chile</span>
-          <span className={styles.dot}>•</span>
-          <span>Gestión documental</span>
-          <span className={styles.dot}>•</span>
-          <span>IA especializada</span>
         </div>
       </div>
     </section>
