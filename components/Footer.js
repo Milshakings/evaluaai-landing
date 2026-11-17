@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
     <footer style={{
-      borderTop: '1px solid #1e293b',
-      backgroundColor: '#070a10',
+      borderTop: '1px solid var(--border-color)',
+      backgroundColor: 'var(--bg-elevated)',
       padding: '40px 20px',
-      color: '#64748b',
+      color: 'var(--text-muted)',
       fontSize: '0.85rem'
     }}>
       <div style={{
@@ -17,20 +17,22 @@ export default function Footer() {
         gap: '20px'
       }}>
         <div>
-          <span style={{ color: '#ffffff', fontWeight: '800', fontSize: '1.1rem' }}>
-            Evalúa<span style={{ color: '#00e5ff' }}>AI</span>
+          <span style={{ color: 'var(--text-main)', fontWeight: '800', fontSize: '1.1rem' }}>
+            Evalúa<span style={{ color: 'var(--brand-cyan)' }}>AI</span>
           </span>
-          <p style={{ marginTop: '6px', color: '#475569' }}>
+          <p style={{ marginTop: '6px' }}>
             IA especializada para la educación inclusiva chilena.
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', color: '#94a3b8' }}>
-          <span>Ajustado al Decreto 170</span>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+          <span>Decreto 170 y 83</span>
           <span>•</span>
-          <span>Sistema PIE</span>
+          <span>Ley 21.719</span>
           <span>•</span>
-          <span>FUDEI</span>
+          <a href="#demo" style={{ textDecoration: 'underline' }}>
+            Desarrolladores / Integración API
+          </a>
         </div>
 
         <div>
